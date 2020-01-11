@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/goblet.iml" filepath="$PROJECT_DIR$/.idea/goblet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goblet-acceptor/goblet-acceptor.iml" filepath="$PROJECT_DIR$/goblet-acceptor/goblet-acceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goblet-interface/goblet-interface.iml" filepath="$PROJECT_DIR$/goblet-interface/goblet-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goblet-joyqueue/goblet-joyqueue.iml" filepath="$PROJECT_DIR$/goblet-joyqueue/goblet-joyqueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goblet-tool/goblet-tool.iml" filepath="$PROJECT_DIR$/goblet-tool/goblet-tool.iml" />
+    </modules>
+  </component>
+</project>
