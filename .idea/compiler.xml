@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="goblet-interface" />
         <module name="goblet-acceptor" />
-        <module name="goblet-joyqueue" />
         <module name="goblet-tool" />
+        <module name="goblet-joyqueue" />
+        <module name="goblet-interface" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
