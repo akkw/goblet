@@ -1,0 +1,21 @@
+{
+  "data": [{
+    "id": "1"
+  }],
+  "database": "test",
+  "es": 1580446455000,
+  "id": 24,
+  "isDdl": false,
+  "mysqlType": {
+    "id": "varchar(8)"
+  },
+  "old": null,
+  "pkNames": null,
+  "sql": "",
+  "sqlType": {
+    "id": 12
+  },
+  "table": "test",
+  "ts": 1580446455730,
+  "type": "INSERT"
+}

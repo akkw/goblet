@@ -6,18 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="goblet-acceptor" />
-        <module name="goblet-tool" />
-        <module name="goblet-joyqueue" />
+        <module name="goblet-server" />
         <module name="goblet-interface" />
+        <module name="goblet-tool" />
+        <module name="goblet-service" />
+        <module name="goblet-network" />
+        <module name="goblet-data" />
+        <module name="goblet-acceptor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="goblet" target="1.8" />
-      <module name="goblet-acceptor" target="1.8" />
-      <module name="goblet-interface" target="1.8" />
-      <module name="goblet-joyqueue" target="1.8" />
-      <module name="goblet-tool" target="1.8" />
+      <module name="goblet" target="1.5" />
+      <module name="goblet-acceptor" target="1.5" />
+      <module name="goblet-data" target="1.5" />
+      <module name="goblet-interface" target="1.5" />
+      <module name="goblet-joyqueue" target="1.5" />
+      <module name="goblet-network" target="8" />
+      <module name="goblet-server" target="1.5" />
+      <module name="goblet-service" target="1.5" />
+      <module name="goblet-tool" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

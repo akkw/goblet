@@ -9,10 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>goblet-joyqueue</module>
         <module>goblet-interface</module>
         <module>goblet-acceptor</module>
         <module>goblet-tool</module>
+        <module>goblet-data</module>
+        <module>goblet-service</module>
+        <module>goblet-network</module>
+        <module>goblet-server</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -42,9 +45,19 @@
                 <version>1.7.2</version>
             </dependency>
             <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>2.3.1</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.36</version>
+            </dependency>
+            <dependency>
+                <groupId>javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.8.0.GA</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
