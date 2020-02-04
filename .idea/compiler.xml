@@ -10,8 +10,9 @@
         <module name="goblet-interface" />
         <module name="goblet-tool" />
         <module name="goblet-service" />
-        <module name="goblet-network" />
         <module name="goblet-data" />
+        <module name="goblet-store" />
+        <module name="goblet-network" />
         <module name="goblet-acceptor" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="goblet-network" target="8" />
       <module name="goblet-server" target="1.5" />
       <module name="goblet-service" target="1.5" />
+      <module name="goblet-store" target="1.5" />
       <module name="goblet-tool" target="8" />
     </bytecodeTargetLevel>
   </component>

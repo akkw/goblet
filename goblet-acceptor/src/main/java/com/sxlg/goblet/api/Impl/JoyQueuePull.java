@@ -18,16 +18,14 @@ public class JoyQueuePull implements Pull {
     Logger logger = LoggerFactory.getLogger(JoyQueuePull.class);
 
 
-    public JoyQueueMessage fetch(Message message, MessageListener.Context context) {
+    public JoyQueueMessage fetch(Message message) {
         JoyQueueMessage data = null;
         if (message != null) {
            String decodeMessage = JoyMessageDeserialization.doDecoding(message.getData(),
                    message.getData().length);
             data = JSONTransform.StringToObject(decodeMessage, JoyQueueMessage.class);
-            if (context != null) {
-                context.ack();
-            }
         }
         return data;
     }
+
 }

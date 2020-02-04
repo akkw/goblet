@@ -6,5 +6,5 @@ import io.openmessaging.message.Message;
 
 
 public interface Pull {
-    JoyQueueMessage fetch(Message message, MessageListener.Context context);
+    JoyQueueMessage fetch(Message message);
 }

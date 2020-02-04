@@ -1,23 +1,22 @@
 package com.sxlg.gbolet.network.worker;
 
-import com.sxlg.goblet.channel.ChannelTransport;
+import com.sxlg.goblet.channel.ServerSocketChannalTransport;
+import com.sxlg.goblet.data.SourceMessage;
 
 import java.io.IOException;
+import java.util.concurrent.BlockingQueue;
 
-import java.net.InetSocketAddress;
-import java.nio.channels.ServerSocketChannel;
+public abstract class AbstractSendWorker extends AbstractWorker{
+    private ServerSocketChannalTransport sourceTransport = null;
+    protected BlockingQueue<SourceMessage> queue;
 
-public abstract class AbstractSendWorker {
-    private ChannelTransport channelTransport = null;
-    private ServerSocketChannel channel = ServerSocketChannel.open();
 
     public AbstractSendWorker() throws IOException {
-        this.channelTransport = new ChannelTransport(channel);
-        channel.socket().bind(new InetSocketAddress(9999));
+        this.sourceTransport = new ServerSocketChannalTransport();
     }
-    abstract void worker();
 
-    public ChannelTransport getChannelTransport() {
-        return channelTransport;
+
+    public ServerSocketChannalTransport getTransport() {
+        return sourceTransport;
     }
 }

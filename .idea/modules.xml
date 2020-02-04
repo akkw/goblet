@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/goblet-network/goblet-network.iml" filepath="$PROJECT_DIR$/goblet-network/goblet-network.iml" />
       <module fileurl="file://$PROJECT_DIR$/goblet-server/goblet-server.iml" filepath="$PROJECT_DIR$/goblet-server/goblet-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/goblet-service/goblet-service.iml" filepath="$PROJECT_DIR$/goblet-service/goblet-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goblet-store/goblet-store.iml" filepath="$PROJECT_DIR$/goblet-store/goblet-store.iml" />
       <module fileurl="file://$PROJECT_DIR$/goblet-tool/goblet-tool.iml" filepath="$PROJECT_DIR$/goblet-tool/goblet-tool.iml" />
     </modules>
   </component>

@@ -2,6 +2,10 @@ package com.sxlg.goblet.source;
 
 import com.sxlg.gbolet.network.worker.DefultSendWorker;
 import com.sxlg.goblet.acceptor.Pull;
+import com.sxlg.goblet.conversion.Constant;
+import com.sxlg.goblet.conversion.NumberConversion;
+import com.sxlg.goblet.data.SourceMessage;
+import com.sxlg.goblet.model.JoyQueueMessage;
 import io.openmessaging.consumer.MessageListener;
 import io.openmessaging.message.Message;
 import io.openmessaging.spring.boot.annotation.OMSMessageListener;
@@ -19,8 +23,8 @@ import java.util.concurrent.BlockingQueue;
 public class GobletDataSource implements MessageListener{
     @Autowired
     Pull queuePull;
-
-    private static BlockingQueue<ByteBuffer> dataWarehouse = new ArrayBlockingQueue<ByteBuffer>(1024, true);
+    private int len = 0;
+    private static BlockingQueue<SourceMessage> dataWarehouse = new ArrayBlockingQueue<SourceMessage>(1024, true);
 
     public GobletDataSource() throws IOException {
         DefultSendWorker worker = new DefultSendWorker(dataWarehouse);
@@ -28,8 +32,15 @@ public class GobletDataSource implements MessageListener{
     }
 
     public void onReceived(Message message, MessageListener.Context context) {
-        byte[] bytes = SerializationUtils.serialize(queuePull.fetch(message, context));
-        dataWarehouse.add(ByteBuffer.wrap(bytes));
+        JoyQueueMessage fetch = queuePull.fetch(message);
+        byte[] bytes = SerializationUtils.serialize(fetch);
+        byte[] packetLengthByte = NumberConversion.intToByte4(bytes.length);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(Constant.PACKET_HEAD_SIZE + bytes.length);
+        byteBuffer.put(packetLengthByte);
+        byteBuffer.put(ByteBuffer.wrap(bytes));
+        byteBuffer.flip();
+
+        dataWarehouse.add(new SourceMessage(byteBuffer, context));
     }
 
 

@@ -1,5 +1,7 @@
 package com.sxlg.goblet.model;
 
-public class MysqlType {
+import java.io.Serializable;
+
+public class MysqlType implements Serializable {
     private String id;
 }

@@ -16,6 +16,7 @@
         <module>goblet-service</module>
         <module>goblet-network</module>
         <module>goblet-server</module>
+        <module>goblet-store</module>
     </modules>
     <dependencyManagement>
         <dependencies>
