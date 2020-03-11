@@ -16,7 +16,8 @@ public class DefultAcceptWorket extends AbstractAcceptWorker {
     private int offset = 0;
     private ByteBuffer byteBuffer = null;
 
-    public DefultAcceptWorket() throws IOException {
+    public DefultAcceptWorket() {
+
         poolExecutor = new ThreadPoolExecutor(1, 1, 0, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<Runnable>(1));
         queue = new ArrayBlockingQueue<ByteBuffer>(1024);
@@ -41,7 +42,7 @@ public class DefultAcceptWorket extends AbstractAcceptWorker {
                     got = channel.read(buffer);
                     handlePackage(buffer);
                 } catch (IOException e) {
-                    logger.error("Read the abnormal", got);
+//                    logger.error("Read the abnormal {}", got ,e);
                 }
             }
         });

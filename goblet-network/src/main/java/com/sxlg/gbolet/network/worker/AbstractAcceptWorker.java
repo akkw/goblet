@@ -11,7 +11,7 @@ public abstract class AbstractAcceptWorker extends AbstractWorker{
     SocketChannalTransport sinkTransport = null;
     protected BlockingQueue<ByteBuffer> queue;
 
-    public AbstractAcceptWorker() throws IOException {
+    public AbstractAcceptWorker() {
         this.sinkTransport = new SocketChannalTransport();
     }
 

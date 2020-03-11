@@ -1,10 +1,9 @@
 package com.sxlg.goblet.acceptor;
 
-import com.sxlg.goblet.model.JoyQueueMessage;
-import io.openmessaging.consumer.MessageListener;
+import com.sxlg.goblet.model.GobletRecord;
 import io.openmessaging.message.Message;
 
 
 public interface Pull {
-    JoyQueueMessage fetch(Message message);
+    GobletRecord fetch(Message message);
 }

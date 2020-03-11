@@ -5,7 +5,7 @@ import com.sxlg.goblet.acceptor.Pull;
 import com.sxlg.goblet.conversion.Constant;
 import com.sxlg.goblet.conversion.NumberConversion;
 import com.sxlg.goblet.data.SourceMessage;
-import com.sxlg.goblet.model.JoyQueueMessage;
+import com.sxlg.goblet.model.GobletRecord;
 import io.openmessaging.consumer.MessageListener;
 import io.openmessaging.message.Message;
 import io.openmessaging.spring.boot.annotation.OMSMessageListener;
@@ -32,7 +32,7 @@ public class GobletDataSource implements MessageListener{
     }
 
     public void onReceived(Message message, MessageListener.Context context) {
-        JoyQueueMessage fetch = queuePull.fetch(message);
+        GobletRecord fetch = queuePull.fetch(message);
         byte[] bytes = SerializationUtils.serialize(fetch);
         byte[] packetLengthByte = NumberConversion.intToByte4(bytes.length);
         ByteBuffer byteBuffer = ByteBuffer.allocate(Constant.PACKET_HEAD_SIZE + bytes.length);
