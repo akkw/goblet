@@ -1,8 +1,7 @@
 package com.sxlg.gbolet.network.worker;
 
-import com.sxlg.goblet.channel.SocketChannalTransport;
+import com.sxlg.goblet.network.channel.SocketChannalTransport;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.concurrent.BlockingQueue;

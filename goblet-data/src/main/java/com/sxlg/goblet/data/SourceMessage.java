@@ -5,12 +5,12 @@ import io.openmessaging.consumer.MessageListener;
 import java.nio.ByteBuffer;
 
 public class SourceMessage {
-    private ByteBuffer buffer;
+    private ByteBuffer message;
     private MessageListener.Context context;
 
-    public SourceMessage( ByteBuffer buffer, MessageListener.Context context) {
+    public SourceMessage(ByteBuffer message, MessageListener.Context context) {
         this.context = context;
-        this.buffer = buffer;
+        this.message = message;
     }
 
     public MessageListener.Context getContext() {
@@ -21,11 +21,11 @@ public class SourceMessage {
         this.context = context;
     }
 
-    public ByteBuffer getBuffer() {
-        return buffer;
+    public ByteBuffer getMessage() {
+        return message;
     }
 
-    public void setBuffer(ByteBuffer buffer) {
-        this.buffer = buffer;
+    public void setMessage(ByteBuffer message) {
+        this.message = message;
     }
 }

@@ -1,7 +1,6 @@
 package com.sxlg.goblet.runtime;
 
-import com.sxlg.goblet.service.config.Configuration;
-import com.sxlg.goblet.service.core.GobletService;
+import com.sxlg.goblet.store.service.core.GobletService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,5 +1,5 @@
-import com.sxlg.goblet.deserialization.JSONTransform;
-import com.sxlg.goblet.model.GobletRecord;
+import com.sxlg.goblet.store.deserialization.JSONTransform;
+import com.sxlg.goblet.data.model.GobletRecord;
 import org.apache.commons.lang3.SerializationUtils;
 import org.junit.Test;
 

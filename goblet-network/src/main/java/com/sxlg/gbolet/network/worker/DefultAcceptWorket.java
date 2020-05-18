@@ -1,6 +1,6 @@
 package com.sxlg.gbolet.network.worker;
 
-import com.sxlg.goblet.conversion.Constant;
+import com.sxlg.goblet.store.conversion.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -67,6 +67,7 @@ public class DefultAcceptWorket extends AbstractAcceptWorker {
                 byte[] byes = new byte[packetLength];
                 byteBuffer.get(byes, 0, packetLength);
                 queue.add(ByteBuffer.wrap(byes));
+                logger.info("queue size {}",queue.size());
                 offset += packetLength + Constant.PACKET_HEAD_SIZE;
 
                 if (position == offset) {

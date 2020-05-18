@@ -1,11 +1,11 @@
 package com.sxlg.goblet.source;
 
 import com.sxlg.gbolet.network.worker.DefultSendWorker;
-import com.sxlg.goblet.acceptor.Pull;
-import com.sxlg.goblet.conversion.Constant;
-import com.sxlg.goblet.conversion.NumberConversion;
+import com.sxlg.goblet.store.acceptor.Pull;
+import com.sxlg.goblet.store.conversion.Constant;
+import com.sxlg.goblet.store.conversion.NumberConversion;
 import com.sxlg.goblet.data.SourceMessage;
-import com.sxlg.goblet.model.GobletRecord;
+import com.sxlg.goblet.data.model.GobletRecord;
 import io.openmessaging.consumer.MessageListener;
 import io.openmessaging.message.Message;
 import io.openmessaging.spring.boot.annotation.OMSMessageListener;
@@ -19,20 +19,19 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 @Component
-@OMSMessageListener(queueName = "example")
+@OMSMessageListener(queueName = "goblet")
 public class GobletDataSource implements MessageListener{
     @Autowired
     Pull queuePull;
     private int len = 0;
-    private static BlockingQueue<SourceMessage> dataWarehouse = new ArrayBlockingQueue<SourceMessage>(1024, true);
-
+    private  BlockingQueue<SourceMessage> dataWarehouse = new ArrayBlockingQueue<SourceMessage>(1024, true);
     public GobletDataSource() throws IOException {
         DefultSendWorker worker = new DefultSendWorker(dataWarehouse);
         worker.start();
     }
 
     public void onReceived(Message message, MessageListener.Context context) {
-        GobletRecord fetch = queuePull.fetch(message);
+        GobletRecord fetch = queuePull.pares(message);
         byte[] bytes = SerializationUtils.serialize(fetch);
         byte[] packetLengthByte = NumberConversion.intToByte4(bytes.length);
         ByteBuffer byteBuffer = ByteBuffer.allocate(Constant.PACKET_HEAD_SIZE + bytes.length);

@@ -1,4 +1,4 @@
-import com.sxlg.goblet.service.core.GobletService;
+import com.sxlg.goblet.store.service.core.GobletService;
 
 public class Main {
 
